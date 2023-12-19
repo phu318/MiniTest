@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d6a35955-43da-422d-88ef-a1812b3951ee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/book/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/book/FictionBook.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/book/ProgrammingBook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="d6a35955-43da-422d-88ef-a1812b3951ee" name="Changes" comment="minitest" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -72,10 +66,16 @@
       <workItem from="1702712627067" duration="421000" />
       <workItem from="1702729804919" duration="58000" />
       <workItem from="1702795263737" duration="1118000" />
+      <workItem from="1702805366078" duration="8054000" />
+      <workItem from="1702979656447" duration="9667000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="minitest" />
+    <option name="LAST_COMMIT_MESSAGE" value="minitest" />
   </component>
 </project>

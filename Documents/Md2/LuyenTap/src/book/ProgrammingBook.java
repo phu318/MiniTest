@@ -35,6 +35,12 @@ private String framework;
     public void displayBook() {
         super.displayBook();
         System.out.println("Ngôn ngữ là " + language);
-        System.out.println("Framwork là " + framework);
+        System.out.println("Framework là " + framework);
+    }
+    @Override
+    public String toString() {
+        return super.toString() + "Ngôn ngữ: " + language +
+                "\nFramework " + framework +
+                "\n-------------------";
     }
 }

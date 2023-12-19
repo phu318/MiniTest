@@ -53,4 +53,13 @@ public  void displayBook(){
     System.out.println("Giá sách là " + price);
     System.out.println("Tác giả " + author);
 }
+    @Override
+    public String toString() {
+        return "Book Code: " + bookcode +
+                "\nTên sách: " + name +
+                "\nGiá: " + price +
+                "\nTác Giả: " + author +
+                "\n";
+
+    }
 }

@@ -27,4 +27,9 @@ public class FictionBook extends Book{
         super.displayBook();
         System.out.println("Loại sách này là" + category);
     }
+    @Override
+    public String toString() {
+        return super.toString() + "Thể loại: " + category +
+                "\n-------------------";
+    }
 }
