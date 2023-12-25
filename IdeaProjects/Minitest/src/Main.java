@@ -1,36 +1,20 @@
 import material.CrispyFlour;
 import material.Material;
+import material.MaterialManager;
 import material.Meat;
 
 import java.time.LocalDate;
 import java.util.*;
 
-public class Main {
+public  class Main {
+   static MaterialManager materialManager  = new MaterialManager();
     public static void main(String[] args) {
-        List<Material> materialList = new ArrayList<>();
-        LocalDate today = LocalDate.of(2023, 11, 12);
-        materialList.add(new CrispyFlour("1", "bot mi", today, 100, 5));
-        materialList.add(new CrispyFlour("2", "bot nang", today, 200, 4));
-        materialList.add(new CrispyFlour("3", "bot loc", today, 300, 3));
-        materialList.add(new CrispyFlour("4", "bot nep", today, 400, 2));
-        materialList.add(new CrispyFlour("5", "bot gao", today, 500, 1));
-        materialList.add(new Meat("6", "thit ga", today, 100, 10));
-        materialList.add(new Meat("7", "thit heo", today, 200, 12));
-        materialList.add(new Meat("8", "thit cho", today, 300, 100));
-        materialList.add(new Meat("9", "thit chim", today, 800, 12));
-        materialList.add(new Meat("10", "thit ho", today, 1100, 30));
-//        displayMaterial(materialList);
-//        addMaterial(materialList);
-//        removeMaterialByCode(materialList, "2");
-//        updateMaterialById(materialList,"2");
-//        sortByPrice(materialList);
 
-//        System.out.println(totalCostMaterial(materialList));
-//        calendarDifference(materialList);
-        System.out.println(calendarDifference(materialList));
+
         int choice;
         boolean flag = false;
         Scanner scanner = new Scanner(System.in);
+
         do {
             System.out.println("MENU");
             System.out.println("1. Thêm sản phẩm");
@@ -43,22 +27,22 @@ public class Main {
             choice = scanner.nextInt();
             switch (choice){
                 case 1:
-                    addMaterial(materialList);
+                    addMaterial();
                     break;
                 case 2:
-                    removeMaterialByCode(materialList,"2");
+                    removeMaterialByCode();
                     break;
                 case 3:
-                    updateMaterialById(materialList,"2");
+//                    updateMaterialById(materialList,"2");
                     break;
                 case 4 :
-                    sortByPrice(materialList);
+//                    sortByPrice(materialList);
                     break;
                 case 5 :
-                    System.out.println("Tổng tiền của các sản phẩm là " + totalCostMaterial(materialList));
+//                    System.out.println("Tổng tiền của các sản phẩm là " + totalCostMaterial(materialList));
                     break;
                 case 6:
-                    System.out.println("Tỉ số chênh lêch là " + calendarDifference(materialList));
+//                    System.out.println("Tỉ số chênh lêch là " + calendarDifference(materialList));
                     break;
                 case 7:
                     flag = true;
@@ -78,7 +62,7 @@ public class Main {
         }
     }
 
-    public static void addMaterial(List<Material> materialList) {
+    public static void addMaterial() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Bạn vui lòng nhập thông tin muốn thêm");
         System.out.println("Nhập mã code");
@@ -91,22 +75,18 @@ public class Main {
         scanner.nextLine();
         System.out.println("Nhập số lượng");
         long quantity = scanner.nextLong();
-        Material material = new CrispyFlour(id, name, LocalDate.now(), 5,quantity);
-        materialList.add(material);
-        displayMaterial(materialList);
+
+        Material material = new CrispyFlour(id,name,LocalDate.now(),cost,quantity);
+       materialManager.addMaterial(material);
+       displayMaterial(materialManager.getAll());
     }
 
-    public static void removeMaterialByCode(List<Material> materialList, String id) {
+    public static void removeMaterialByCode() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhập sản phẩm có ID bạn muốn xóa");
-        id = scanner.nextLine();
-        for (Material material : materialList) {
-            if (material.getId().equals(id)) {
-                materialList.remove(material);
-                break;
-            }
-        }
-        displayMaterial(materialList);
+        String id = scanner.nextLine();
+        materialManager.removeMaterialByMyCode(id);
+        displayMaterial(materialManager.getAll());
     }
 
     public static void updateMaterialById(List<Material> materialList, String id) {
