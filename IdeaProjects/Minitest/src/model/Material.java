@@ -1,9 +1,9 @@
-package material;
+package model;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public abstract class Material implements Discount {
+
     private String id;
     private String name;
     private LocalDate creatAt;
@@ -14,6 +14,9 @@ public abstract class Material implements Discount {
         this.name = name;
         this.creatAt = creatAt;
         this.cost = cost;
+    }
+    public Material(){
+
     }
 
     public String getId() {

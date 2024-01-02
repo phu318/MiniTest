@@ -1,7 +1,6 @@
-import material.CrispyFlour;
-import material.Material;
-import material.MaterialManager;
-import material.Meat;
+import model.CrispyFlour;
+import model.Material;
+import model.Meat;
 
 import java.time.LocalDate;
 import java.util.*;
@@ -33,7 +32,7 @@ public  class Main {
                     removeMaterialByCode();
                     break;
                 case 3:
-//                    updateMaterialById(materialList,"2");
+                    updateMaterialById(materialManager.getAll(),"2");
                     break;
                 case 4 :
 //                    sortByPrice(materialList);
@@ -105,14 +104,14 @@ public  class Main {
                 System.out.print("Số lượng mới: ");
                 long newQuantity = Long.parseLong(scanner.nextLine());
 
-                material.setName(newName);
-                material.setCost(newCost);
-                ((CrispyFlour) material).setQuantity(newQuantity);
+                crispyFlour.setName(newName);
+                crispyFlour.setCost(newCost);
+                crispyFlour.setQuantity(newQuantity);
 
                 System.out.println("Sửa thông tin sản phẩm thành công.");
                 System.out.println(" ");
                 System.out.println(" Danh sách sản phẩm mới là: ");
-                displayMaterial(materialList);
+                displayMaterial(materialManager.getAll());
                 return;
             }
         }
